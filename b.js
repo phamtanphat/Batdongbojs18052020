@@ -1,12 +1,14 @@
 const request = require('request');
 
-function tong(a , b , cb){
-    const url = `https://pheptinhonline.herokuapp.com/cong/${a}/${b}` 
+function tong(a , b ){
+    return new Promise((resolve , reject) => {
+        const url = `https://pheptinhonline.herokuapp.com/cong/${a}/${b}` 
 
-    request(url ,{json : true} ,function(error ,response , body){
-        if (error) return cb(error.message)
-        if (!body.success) return cb(body.message)
-        cb (null,body.message)
+        request(url ,{json : true} ,function(error ,response , body){
+            if (error) return reject(error.message)
+            if (!body.success) return reject(body.message)
+            resolve(body.message)
+        })
     })
 }
 
@@ -43,9 +45,6 @@ function chia(a , b , cb){
 // a + b - c
 // 5 + 4 - 1
 
-tong(5 , 0 , (error , value) => {
-    if (error) return 
-    tru(value , 1 ,(errorTru , valueTru) => {
-        console.log(errorTru || valueTru)
-    })
-})
+tong(5 , null )
+.then(value => console.log(value))
+.catch(error =>  console.log(error))
