@@ -1,0 +1,7 @@
+[
+    {"id" : 1 , "name" : "Nguyen Van A" , "age" : 20},
+    {"id" : 2 , "name" : "Nguyen Van B" , "age" : 21},
+    {"id" : 3 , "name" : "Nguyen Van C" , "age" : 22},
+    {"id" : 4 , "name" : "Nguyen Van D" , "age" : 23},
+    {"id" : 5 , "name" : "Nguyen Van E" , "age" : 24}
+]

@@ -1,54 +1,54 @@
-const request = require('request');
+// const request = require('request');
 
-function tong(a , b ){
-    return new Promise((resolve , reject) => {
-        const url = `https://pheptinhonline.herokuapp.com/cong/${a}/${b}` 
+// function tong(a , b ){
+//     return new Promise((resolve , reject) => {
+//         const url = `https://pheptinhonline.herokuapp.com/cong/${a}/${b}` 
 
-        request(url ,{json : true} ,function(error ,response , body){
-            if (error) return reject(error.message)
-            if (!body.success) return reject(body.message + " Cong")
-            resolve(body.message)
-        })
-    })
-}
+//         request(url ,{json : true} ,function(error ,response , body){
+//             if (error) return reject(error.message)
+//             if (!body.success) return reject(body.message + " Cong")
+//             resolve(body.message)
+//         })
+//     })
+// }
 
-function tru(a , b ){
-    return new Promise((resolve , reject) => {
-        const url = `https://pheptinhonline.herokuapp.com/tru/${a}/${b}` 
+// function tru(a , b ){
+//     return new Promise((resolve , reject) => {
+//         const url = `https://pheptinhonline.herokuapp.com/tru/${a}/${b}` 
 
-        request(url ,{json : true} ,function(error ,response , body){
-            if (error) return reject(error.message)
-            if (!body.success) return reject(body.message )
-            resolve (body.message)
-        })
-    })
+//         request(url ,{json : true} ,function(error ,response , body){
+//             if (error) return reject(error.message)
+//             if (!body.success) return reject(body.message )
+//             resolve (body.message)
+//         })
+//     })
    
-}
+// }
 
-function nhan(a , b ){
-    return new Promise((resolve , reject) => {
-        const url = `https://pheptinhonline.herokuapp.com/nhan/${a}/${b}` 
+// function nhan(a , b ){
+//     return new Promise((resolve , reject) => {
+//         const url = `https://pheptinhonline.herokuapp.com/nhan/${a}/${b}` 
 
-        request(url ,{json : true} ,function(error ,response , body){
-            if (error) return reject(error.message)
-            if (!body.success) return reject(body.message)
-            resolve (body.message)
-        })
-    })
-}
+//         request(url ,{json : true} ,function(error ,response , body){
+//             if (error) return reject(error.message)
+//             if (!body.success) return reject(body.message)
+//             resolve (body.message)
+//         })
+//     })
+// }
 
 
-function chia(a , b ){
-    return new Promise((resolve , reject) => {
-        const url = `https://pheptinhonline.herokuapp.com/chia/${a}/${b}` 
+// function chia(a , b ){
+//     return new Promise((resolve , reject) => {
+//         const url = `https://pheptinhonline.herokuapp.com/chia/${a}/${b}` 
 
-        request(url ,{json : true} ,function(error ,response , body){
-            if (error) return reject(error.message)
-            if (!body.success) return reject(body.message)
-            resolve (body.message)
-        })
-    })
-}
+//         request(url ,{json : true} ,function(error ,response , body){
+//             if (error) return reject(error.message)
+//             if (!body.success) return reject(body.message)
+//             resolve (body.message)
+//         })
+//     })
+// }
 
 
 // a + b - c
@@ -59,12 +59,26 @@ function chia(a , b ){
 // .then(valueHieu => console.log(valueHieu))
 // .catch(error =>  console.log(error))
 
-Promise.all([
-    tong(1,null),
-    tru(2,3),
-    nhan(3,4),
-    chia(4,5)
-])
-.then(values => console.log(values))
-.catch(error => console.log(error))
-.finally(() => console.log("ket thuc"))
+// Promise.all([
+//     tong(1,null),
+//     tru(2,3),
+//     nhan(3,4),
+//     chia(4,5)
+// ])
+// .then(values => console.log(values))
+// .catch(error => console.log(error))
+// .finally(() => console.log("ket thuc"))
+
+const fs = require("fs")
+
+// fs.readFile('./data.json',(error , data) => {
+//     console.log(JSON.parse(data))
+// })
+
+try {
+    const value = fs.readFileSync('./data.jso')
+    console.log(JSON.parse(value))
+} catch (error) {
+    console.log(error.message)
+}
+
