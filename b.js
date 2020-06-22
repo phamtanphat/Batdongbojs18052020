@@ -69,7 +69,7 @@
 // .catch(error => console.log(error))
 // .finally(() => console.log("ket thuc"))
 
-const fs = require("fs")
+// const fs = require("fs")
 
 // fs.readFile('./data.json',(error , data) => {
 //     console.log(JSON.parse(data))
@@ -88,19 +88,19 @@ const fs = require("fs")
 //     console.log(error)
 // })
 
-var readlineSync = require('readline-sync');
+// var readlineSync = require('readline-sync');
 
 // const name = readlineSync.question("What is your name : ")
-const questions = ['Insert', 'Delete', 'Update', 'Reset']
-const index = readlineSync.keyInSelect(questions, 'What do you want?');
+// const questions = ['Insert', 'Delete', 'Update', 'Reset']
+// const index = readlineSync.keyInSelect(questions, 'What do you want?');
 
-switch(index){
-    case 0 : insertDatabase();
-        break
-}
+// switch(index){
+//     case 0 : insertDatabase();
+//         break
+// }
 
-function insertDatabase(){
-    const name = readlineSync.question("What is your name");
-    const age = readlineSync.question("How old are you");
-    console.log(name , age)
-}
+// function insertDatabase(){
+//     const name = readlineSync.question("What is your name");
+//     const age = readlineSync.question("How old are you");
+//     console.log(name , age)
+// }
