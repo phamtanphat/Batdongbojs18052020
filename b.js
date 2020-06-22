@@ -82,8 +82,25 @@ const fs = require("fs")
 //     console.log(error.message)
 // }
 
-const values = [{id : 1 , name : "Nguyen Van A" , age : 20}]
+// const values = [{id : 1 , name : "Nguyen Van A" , age : 20}]
 
-fs.writeFile('./data.json', JSON.stringify(values) , {encoding : 'utf8'} , (error) => {
-    console.log(error)
-})
+// fs.writeFile('./data.json', JSON.stringify(values) , {encoding : 'utf8'} , (error) => {
+//     console.log(error)
+// })
+
+var readlineSync = require('readline-sync');
+
+// const name = readlineSync.question("What is your name : ")
+const questions = ['Insert', 'Delete', 'Update', 'Reset']
+const index = readlineSync.keyInSelect(questions, 'What do you want?');
+
+switch(index){
+    case 0 : insertDatabase();
+        break
+}
+
+function insertDatabase(){
+    const name = readlineSync.question("What is your name");
+    const age = readlineSync.question("How old are you");
+    console.log(name , age)
+}
