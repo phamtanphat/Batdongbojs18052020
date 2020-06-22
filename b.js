@@ -75,10 +75,15 @@ const fs = require("fs")
 //     console.log(JSON.parse(data))
 // })
 
-try {
-    const value = fs.readFileSync('./data.jso')
-    console.log(JSON.parse(value))
-} catch (error) {
-    console.log(error.message)
-}
+// try {
+//     const value = fs.readFileSync('./data.json')
+//     console.log(JSON.parse(value) )
+// } catch (error) {
+//     console.log(error.message)
+// }
 
+const values = [{id : 1 , name : "Nguyen Van A" , age : 20}]
+
+fs.writeFile('./data.json', JSON.stringify(values) , {encoding : 'utf8'} , (error) => {
+    console.log(error)
+})
